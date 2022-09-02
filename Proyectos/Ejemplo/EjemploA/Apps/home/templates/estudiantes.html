@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://code.jquery.com/jquery.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/funciones.js"></script>
+    <title>Estudiantes</title>
+</head>
+<body>
+    <img src="../images/LogoUMG.png" width="201" height="176" alt="imagenUMG" title="Imagen Universidad Mariano Galvez" align="right">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbar-bottom/">
+    <link rel="stylesheet"href="../css/bootstrap.min.css">
+    
+    
+  
+    <div class="container">
+        <h1>Bienvenidos Estudiantes</h1><br>
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href={% url 'home:homeapp' %} title="Enlace Home" class="nav-link" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href={% url 'home:estudiantesapp' %} title="Enlace Astudiantes" class="nav-link active">Estudiantes</a></li>
+        <li class="nav-item"><a href={% url 'home:administradoresapp' %} title="Enlace Administradores" class="nav-link">Administradores</a></li>
+        <li class="nav-item"><a href={% url 'home:homeapp' %} title="Mi enlace" class="nav-link">Acerca de</a></li>
+      </ul>
+    </header>
+  </div>
+
+    <br><br>
+    <h3>Tabla de Estudiantes</h3> 
+    <table class="table">
+        <tr>
+            <td class="col-2 themed-grid-col">Id</td>
+            <td class="col-4 themed-grid-col">Nombre</td>
+            <td class="col-4 themed-grid-col">Apellido</td>
+            <td class="col-3 themed-grid-col">Telefono</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Juan</td>
+            <td>Garcia</td>
+            <td>47563976</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Carlos</td>
+            <td>Santana</td>
+            <td>66483845</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Ana</td>
+            <td>Lopez</td>
+            <td>59376790</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Karla</td>
+            <td>Contreras</td>
+            <td>12039485</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Steve</td>
+            <td>Gomez</td>
+            <td>93222845</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Hank</td>
+            <td>Schrader</td>
+            <td>99948373</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Saul</td>
+            <td>Goodman</td>
+            <td>58672227</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Carmen</td>
+            <td>Flores</td>
+            <td>34933273</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Rosa</td>
+            <td>Diaz</td>
+            <td>94826465</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Terrance</td>
+            <td>Jeffords</td>
+            <td>32272737</td>
+        </tr>
+    </table>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   
+
+</body>
+</html>

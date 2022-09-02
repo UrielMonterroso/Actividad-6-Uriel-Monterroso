@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://code.jquery.com/jquery.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../js/funciones.js"></script>
+    <title>Administradores</title>
+</head>
+<body>
+    <img src="../images/LogoUMG.png" width="201" height="176" alt="imagenUMG" title="Imagen Universidad Mariano Galvez" align="right">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbar-bottom/">
+    <link rel="stylesheet"href="../css/bootstrap.min.css">
+    
+    
+  
+    <div class="container">
+        <h1>Bienvenidos Administradores</h1><br>
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href={% url 'home:homeapp' %} title="Enlace Home" class="nav-link" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href={% url 'home:estudiantesapp' %} title="Enlace Astudiantes" class="nav-link">Estudiantes</a></li>
+        <li class="nav-item"><a href={% url 'home:administradoresapp' title="Enlace Administradores" class="nav-link active">Administradores</a></li>
+        <li class="nav-item"><a href={% url 'home:homeapp' %} title="Mi enlace" class="nav-link">Acerca de</a></li>
+      </ul>
+    </header>
+  </div>
+    <br><br>
+    
+    <h3>Tabla de Administradores</h3>
+    <table class="table">
+        <tr>
+            <td class="col-2 themed-grid-col">Id</td>
+            <td class="col-4 themed-grid-col">Nombre</td>
+            <td class="col-4 themed-grid-col">Apellido</td>
+            <td class="col-3 themed-grid-col">Telefono</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Jake</td>
+            <td>Peralta</td>
+            <td>89482745</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Amy</td>
+            <td>Santiago</td>
+            <td>23493784</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Axl</td>
+            <td>Rose</td>
+            <td>29018371</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Raymond</td>
+            <td>Holt</td>
+            <td>91290192</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Freddie</td>
+            <td>Merury</td>
+            <td>10919238</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Jon</td>
+            <td>Bon Jovi</td>
+            <td>10932030</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Walter</td>
+            <td>White</td>
+            <td>29090348</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Jesse</td>
+            <td>Pinkman</td>
+            <td>13893847</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Marie</td>
+            <td>Schrader</td>
+            <td>99391837</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Gustavo</td>
+            <td>Fring</td>
+            <td>87737443</td>
+        </tr>
+    </table>
+
+</body>
+</html>
