@@ -1,35 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="http://code.jquery.com/jquery.js"></script>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="../js/funciones.js"></script>
+{% extends 'base.html' %}
+
+{% block contenido %}
     <title>Administradores</title>
-</head>
-<body>
-    <img src="../images/LogoUMG.png" width="201" height="176" alt="imagenUMG" title="Imagen Universidad Mariano Galvez" align="right">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbar-bottom/">
-    <link rel="stylesheet"href="../css/bootstrap.min.css">
+
+    <!-- Masthead-->
+<header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">ADMINISTRADORES</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">Pagina de tabla de administradores del sitio web</h2>
+                <a class="btn btn-primary" href="#about">Aceptar</a>
+                <a class="btn btn-primary" href="#about">Agregar</a>
+                <a class="btn btn-primary" href="#about">Ocultar</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- About-->
+<section class="about-section text-center" id="about">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="text-white mb-4">Tabla de Estudiantes</h2>
+                
+            </div>
+        </div>
+        <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
+    </div>
+</section>
     
-    
-  
-    <div class="container">
-        <h1>Bienvenidos Administradores</h1><br>
-    <header class="d-flex justify-content-center py-3">
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href={% url 'home:homeapp' %} title="Enlace Home" class="nav-link" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href={% url 'home:estudiantesapp' %} title="Enlace Astudiantes" class="nav-link">Estudiantes</a></li>
-        <li class="nav-item"><a href={% url 'home:administradoresapp' title="Enlace Administradores" class="nav-link active">Administradores</a></li>
-        <li class="nav-item"><a href={% url 'home:homeapp' %} title="Mi enlace" class="nav-link">Acerca de</a></li>
-      </ul>
-    </header>
-  </div>
-    <br><br>
-    
-    <h3>Tabla de Administradores</h3>
     <table class="table">
         <tr>
             <td class="col-2 themed-grid-col">Id</td>
@@ -99,5 +99,4 @@
         </tr>
     </table>
 
-</body>
-</html>
+{% endblock %}
