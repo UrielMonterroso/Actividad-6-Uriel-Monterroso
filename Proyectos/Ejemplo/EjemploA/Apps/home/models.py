@@ -35,3 +35,28 @@ class Telefono(models.Model):
 
     def __str__(self):
         return '%s' % (self.telefono)
+
+class EstudianteAut(models.Model):
+    nombre= models.CharField(max_length=100)
+    apellido= models.CharField(max_length=200)
+    creacion = models.DateTimeField(auto_now_add = True)
+
+    def __str__(self):
+        return '%s %s' % (self.nombre, self.apellido)
+
+class Articulo(models.Model):
+    nombre= models.CharField(max_length=100)
+    descripcion= models.CharField(max_length=100)
+    creacion = models.DateTimeField(auto_now_add = True)
+
+    def __str__(self):
+        return '%s %s' % (self.nombre, self.descripcion)
+
+class Comentario(models.Model):
+    comentario = models.CharField(max_length=100)
+    creacion = models.DateTimeField(auto_now_add = True)
+    Estudiante = models.ManyToManyField(Estudiante)
+    Articulo = models.ManyToManyField(Articulo)
+
+    def __str__(self):
+        return '%s' % (self.comentario)
