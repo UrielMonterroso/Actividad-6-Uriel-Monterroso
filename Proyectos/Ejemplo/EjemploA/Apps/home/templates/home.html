@@ -14,8 +14,9 @@
                       <h1 class="mx-auto my-0 text-uppercase">HOME</h1>
                       <h2 class="text-white-50 mx-auto mt-2 mb-5">Pagina de inicio del sitio web</h2>
                       <a class="btn btn-primary" href="#about">Aceptar</a>
-                      <a class="btn btn-primary" href="#about">Agregar</a>
-                      <a class="btn btn-primary" href="#about">Ocultar</a>
+                      <a class="btn btn-primary" href={% url 'home:creararticulosapp' %}>Agregar Articulos</a>
+                      <a class="btn btn-primary" href={% url 'home:crearcomentariosapp' %}>Agregar Comentarios</a>
+                      <a class="btn btn-primary" href="#about">Cancelar</a>
                   </div>
               </div>
           </div>
