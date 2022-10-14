@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView
-from .forms import EstudianteForm, EstudianteAutForm, ArticuloForm, ComentarioForm, AdministradorForm
+from .forms import EstudianteForm, EstudianteAutForm, ArticuloForm, ComentarioForm, AdministradorForm, IniciosesionForm, RegistroForm
 from django.urls import reverse_lazy 
+from .models import Usuario
+from django.contrib.auth.views import LoginView
 
 # Create your views here.
 
@@ -41,4 +43,16 @@ class CrearAdministradoresView(CreateView):
 
 class IniciosesionView(TemplateView):
     template_name='iniciosesion.html'
-    
+
+class CrearIniciosesionView(CreateView):
+    template_name ='iniciosesion.html'
+    form_class = IniciosesionForm
+    success_url=reverse_lazy('home:homeapp')
+
+class RegistroView(CreateView):
+    model = Usuario
+    form_class = RegistroForm
+    success_url=reverse_lazy('home:homeapp')
+
+class LoginView(LoginView):
+    template_name ='iniciosesion.html'
