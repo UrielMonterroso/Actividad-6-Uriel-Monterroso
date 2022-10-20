@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, ListView
 from .forms import EstudianteForm, EstudianteAutForm, ArticuloForm, ComentarioForm, AdministradorForm, IniciosesionForm, RegistroForm
 from django.urls import reverse_lazy 
-from .models import Usuario
+from .models import Usuario, Estudiante, EstudianteAut, Articulo, Comentario, Administrador
 from django.contrib.auth.views import LoginView
 
 # Create your views here.
@@ -19,27 +19,27 @@ class EstudiantesView(TemplateView):
 class CrearEstudiantesView(CreateView):
     template_name='crearestudiantes.html'
     form_class = EstudianteForm
-    success_url = reverse_lazy('home:homeapp')
+    success_url = reverse_lazy('home:listarestudiantesapp')
 
 class CrearEstudianteAutsView(CreateView):
     template_name='crearestudianteauts.html'
     form_class = EstudianteAutForm
-    success_url = reverse_lazy('home:homeapp')
+    success_url = reverse_lazy('home:listarestudianteautsapp')
 
 class CrearArticulosView(CreateView):
     template_name='creararticulos.html'
     form_class = ArticuloForm
-    success_url = reverse_lazy('home:homeapp')
+    success_url = reverse_lazy('home:listararticulosapp')
 
 class CrearComentariosView(CreateView):
     template_name='crearcomentarios.html'
     form_class = ComentarioForm
-    success_url = reverse_lazy('home:homeapp')
+    success_url = reverse_lazy('home:listarcomentariosapp')
 
 class CrearAdministradoresView(CreateView):
     template_name='crearadministradores.html'
     form_class = AdministradorForm
-    success_url = reverse_lazy('home:homeapp')
+    success_url = reverse_lazy('home:listaradministradoresapp')
 
 class IniciosesionView(TemplateView):
     template_name='iniciosesion.html'
@@ -56,3 +56,38 @@ class RegistroView(CreateView):
 
 class LoginView(LoginView):
     template_name ='iniciosesion.html'
+
+class ListarEstudiantesView(ListView):
+    template_name='listarestudiantes.html'
+    model = Estudiante
+
+    def get_query(self):
+        return Estudiante.objects.all()
+
+class ListarEstudianteAutsView(ListView):
+    template_name='listarestudiantesauts.html'
+    model = EstudianteAut
+
+    def get_query(self):
+        return EstudianteAuts.objects.all()
+
+class ListarArticulosView(ListView):
+    template_name='listararticulos.html'
+    model = Articulo
+
+    def get_query(self):
+        return Articulo.objects.all()
+
+class ListarComentariosView(ListView):
+    template_name='listarcomentarios.html'
+    model = Comentario
+
+    def get_query(self):
+        return Comentario.objects.all()
+
+class ListarAdministradoresView(ListView):
+    template_name='listaradministradores.html'
+    model = Administrador
+
+    def get_query(self):
+        return Administrador.objects.all()

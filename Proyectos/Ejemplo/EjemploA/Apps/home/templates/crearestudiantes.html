@@ -37,8 +37,9 @@
                             {% csrf_token %}
                             Nombre {{ form.nombre }}
                             Apellido {{ form.apellido }}
-                        </div>    
-                            <br><input type="submit" name="Guardar"> &nbsp; <a href={% url 'home:estudiantesapp' %}>Ver listado</a>
+                        </div>
+                            <br><input class="btn btn-primary" id="submitButton" type="submit" name="Guardar">
+                            &nbsp; <a class="btn btn-primary" href={% url 'home:listarestudiantesapp' %}>Ver listado</a>
                     </form>
                 </div>
             </div>
