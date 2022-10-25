@@ -31,12 +31,26 @@
                     <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
                     
                     <h2 class="text-white mb-5">Listado de Articulosen el sitio web</h2>
+
+                    <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN" action="" method="GET">
+                        <div class="row input-group-newsletter">
+                            <div class="col">
+                                <input class="form-control" id="emailAddress" type="text" name="nombre" value="{{request.GET.nombre}}" placeholder="ingresar nombre...">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary" id="submitButton" type="submit">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+
                     <caption>Listado de Articulos en el sitio web</caption>
                     <table class="table" style="color:#FFFFFF">
                         <thead>
                             <tr>
                                 <td class="col-4 themed-grid-col">Nombre</td>
                                 <td class="col-4 themed-grid-col">Descripcion</td>
+                                <td class="col-4 themed-grid-col">Accion</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -47,6 +61,9 @@
                                 </td>
                                 <td>
                                     {{ est.descripcion }}
+                                </td>
+                                <td>
+                                    <a href="{% url 'home:editararticulosapp' est.id %}" >Editar</a>
                                 </td>
                             </tr>
                             {% endfor %}

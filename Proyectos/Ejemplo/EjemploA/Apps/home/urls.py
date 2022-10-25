@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from .views import HomeView,AdministradoresView,EstudiantesView,CrearEstudiantesView,CrearEstudianteAutsView,CrearArticulosView,CrearComentariosView,CrearAdministradoresView,IniciosesionView,RegistroView,LoginView,ListarEstudiantesView,ListarEstudianteAutsView,ListarArticulosView,ListarComentariosView,ListarAdministradoresView
+from .views import HomeView,AdministradoresView,EstudiantesView,CrearEstudiantesView,CrearEstudianteAutsView,CrearArticulosView,CrearComentariosView,CrearAdministradoresView,IniciosesionView,RegistroView,LoginView,ListarEstudiantesView,ListarEstudianteAutsView,ListarArticulosView,ListarComentariosView,ListarAdministradoresView,EditarEstudiantesView,EditarEstudianteAutsView,EditarArticulosView,EditarComentariosView,EditarAdministradoresView
 from Apps.home import views
 
 app_name='home'
@@ -37,5 +37,11 @@ urlpatterns = [
     path('listararticulos/',ListarArticulosView.as_view(), name='listararticulosapp'),
     path('listarcomentarios/',ListarComentariosView.as_view(), name='listarcomentariosapp'),
     path('listaradministradores/',ListarAdministradoresView.as_view(), name='listaradministradoresapp'),
+    path('editarestudiantes/<int:pk>',EditarEstudiantesView.as_view(), name='editarestudiantesapp'),
+    path('editarestudianteauts/<int:pk>',EditarEstudianteAutsView.as_view(), name='editarestudianteautsapp'),
+    path('editararticulos/<int:pk>',EditarArticulosView.as_view(), name='editararticulosapp'),
+    path('editarcomentarios/<int:pk>',EditarComentariosView.as_view(), name='editarcomentariosapp'),
+    path('editaradministradores/<int:pk>',EditarAdministradoresView.as_view(), name='editaradministradoresapp'),
+
     
 ]
